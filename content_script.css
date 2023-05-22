@@ -1,0 +1,164 @@
+div#quentintou button {
+  border: 1px solid #269be8;
+  border-radius: 25px;
+  padding: 4px 10px;
+  margin: 0 4px 10px 0;
+  color: #269be8;
+  font-weight: 700;
+}
+div#quentintou {
+  margin: 10px 0px;
+}
+.que-footer {
+  color: #269be8;
+  font-size: 12px;
+}
+.loader {
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin: 0 auto;
+  border-width: 2px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+.que-red-border {
+  border: 1px solid red !important;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.like_option
+{
+width: 150px;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.like_option  img {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  margin-top:12px;
+  /* line-height: 38px; */
+}
+img.like {
+  margin-top: 6px;
+}
+img.dislike {
+  margin-top: 9px;
+}
+img.reload {
+  margin-top: 8px;
+}
+.shorter
+{
+display: flex;
+}
+.remove_close
+{
+    margin-left: 10px;
+  font-weight: 700;
+}
+
+.ai2-message-page div#quentintou {
+  margin-left: 35px;
+}
+button.que-expression-btn.ExpBtn {
+  cursor: pointer !important;
+}
+
+.ai2-link-message-page div#quentintou {
+  margin-left: 35px;
+}
+
+.agree_div, .opinion_option, .writing_option, .size_option, .response, .tone_option{
+display: flex;
+justify-content: space-between;
+}
+.opinion_option, .writing_option, .size_option, .tone_option {
+
+display:none;
+}
+.agree_div{
+justify-content: space-around;
+    width: 450px;
+}
+.agree_div ul, .opinion_option ul, .writing_option ul,.tone_option ul, .size_option ul{
+display: inline-flex;
+justify-content: space-evenly;
+text-decoration: none;
+list-style: none;
+flex-wrap: wrap;
+
+}
+
+.agree_div ul li, .opinion_option ul li, .tone_option ul li, .writing_option ul li, .size_option ul li
+{
+border: 3px solid #1b92cf;
+border-radius: 11px;
+padding: 6px;
+margin: 10px;
+width: auto;
+height: 29px;
+text-align: center;
+font-size: 12px;
+line-height: 12px;
+color:#269be8;
+font-weight:700;
+cursor: -webkit-grabbing;
+ cursor: grabbing;
+ margin-right: 5px;
+    margin-left: 5px;
+    height: 20px;
+}
+.response_opinion, .response_writing, .response_tone, .response_size {
+  display: flex;
+  justify-content: space-evenly;
+  line-height: 1px;
+  background: #1950b5;
+  height: 34px;
+  padding: 0px 25px;
+  border-radius: 25px;
+}
+.response_opinion span, .response_writing span, .response_tone span, .response_size span  {
+  text-align: center;
+  line-height: 34px;
+  color: #ffffff;
+}
+.response_opinion p, .response_writing p, .response_tone p, .response_size p {
+  margin-left: 11px;
+  font-size: 24px;
+  color: #ffffff;
+  line-height: 30px;
+}
+
+.option_active {
+  background: #1b92cf;
+  color: #ffffff !important;
+}
+.response{
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.response div {
+  margin-top: 5px;
+}
+
+#quentintou ul li {
+    display: block;
+    height: auto !important;
+}

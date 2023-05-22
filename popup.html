@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+  <title>Scale prospecting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="assets/fonts/stylesheet.css"> -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link href="assets/css/toastr.min.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-select.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-tagsinput.css">
+</head>
+
+<body>
+
+  <div class="main-app width-450 without-login">
+    <section class="login-screen">
+      <div class="mid-content">
+        <div class="container">
+          <img class="login-logo" src="assets/images/logo-new-01.png">
+          <p class="sm-text text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+          <form class="forms border-card" id="login_form" name="login_form">
+            <div class="form_group"><!-- 
+              <img src="assets/images/msg.svg"> -->
+              <input type="text" name="email" placeholder="Login">
+            </div>
+            <div class="form_group"><!-- 
+              <img src="assets/images/lock.svg"> -->
+              <input type="password" name="password" placeholder="Password">
+            </div>
+            <!-- <a href="#" class="forget-pass">Forgot password?</a> -->
+            <div class="parent_loader">
+              <div id="loader" class="login_loader" style="display:none"></div>
+              <button class="blue-btn sm-btn"  style="margin:0">Connect</button>
+            </div>
+          </form>
+          <p class="sm-text text-center">Created by webpulser</p>
+        </div>
+      </div>
+    </section>
+    <!-- Forget screen -->
+    <section class="forgot-screen" style="display:none;">
+      <div class="mid-content">
+        <div class="container">
+          <p class="lg-hdg">Forgot password</p>
+          <p class="sm-text">Provide you registered email address to reset passowrd</p>
+          <form class="forms" id="forgotpassword" name="sendotp">
+            <div class="form_group">
+              <img src="assets/images/msg.svg">
+              <input type="text" name="email" placeholder="Enter email address">
+            </div>
+            <a href="#" class="forget-pass back-login">Back to login</a>
+            <div class="blue-btn parent_loader">
+              <div id="loader" class="otp_loader" style="display:none"></div>
+              <button class="blue-btn" style="margin:0">SUBMIT</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Password screen -->
+    <section class="password-screen" style="display:none;">
+      <div class="mid-content">
+        <div class="container">
+          <p class="lg-hdg">Verification code has been sent to your email</p>
+          <form class="forms" id="setpassword" name="setpassword">
+            <div class="form_group">
+              <img src="assets/images/key.svg">
+              <input type="text" name="otp" placeholder="Verification code">
+            </div>
+            <div class="form_group">
+              <img src="assets/images/lock.svg">
+              <input type="text" name="password" id="password" placeholder="New password">
+            </div>
+            <div class="form_group">
+              <img src="assets/images/lock.svg">
+              <input type="text" name="confirmpassword" placeholder="Confirm password">
+            </div>
+            <div class="blue-btn parent_loader">
+              <div id="loader" class="password_loader" style="display:none"></div>
+              <button class="blue-btn" style="margin:0">SUBMIT</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="tags-screen">
+    <div class="mid-content">
+      <div class="container">
+        <div class="back-office d-flex align-items-center justify-content-between" >
+          <img src="assets/images/logo-new-vertical.png">
+          <button class="blue-btn ">Back Office</button>
+        </div>
+        <p class="sm-text text-center mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+        <form class="forms border-card" id="tags_form" name="tags_form">
+          
+          <div class="form_group" style="display:block">
+            <input type="text" name="Job" id="job" placeholder="Sector of activity">
+          </div>
+          <div class="form_group" style="display:block">
+            <input type="text" name="sector" id="sector" placeholder="Job">
+          </div>
+          <div class="form_group" style="display:block">
+            <select name="language"  id="language" style="border:none">
+              <option value="">Language</option>
+              <option value="French">French</option>
+              <option value="English">English</option>
+            </select>
+          </div>
+          <div class="parent_loader">
+            <div id="loader" class="login_loader" style="display:none"></div>
+            <button class="blue-btn" type="button" id="tags-submit"  style="margin:0">Submit</button>
+          </div>
+        </form>
+        <p class="sm-text text-center">Created by webpulser</p>
+      </div>
+    </div>
+  </section>
+</body>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
+<script src="assets/js/bootstrap-select.min.js"></script>
+<script src="assets/js/jquery.validate.js"></script>
+<script src="assets/js/toastr.min.js"></script>
+<script type="text/javascript" src="assets/js/custom.js"></script>
+<script src="config.js"></script>
+<script src="popup.js"></script>
+<script src="assets/js/bootstrap-tagsinput.js"></script>
+
+</html>
