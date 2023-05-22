@@ -422,65 +422,97 @@ $(document).on("click", ".reload", function (e) {
     $('.size_option').hide();
     $('.tone_option').hide();
     $('.response').hide();
-    chrome.storage.sync.get(["language","job","sector","responsedata"], function (result) {        
-        var temp = {}
-        //if (typeof result.language != "undefined" && result.language != "") {
-            temp.language = result.language;
-            temp.job = result.job;
-            temp.sector = result.sector;
-            temp.opinion = result.responsedataopinion;
-            temp.size = result.responsedata.size;
-            temp.writing = result.responsedata.writing_array;
-            temp.tone = result.responsedata.tone_Array;
-
-        // }
-        // if (typeof result.job != "undefined" && result.job != "") {
-        //     temp.job = result.job;
-        //     temp.opinion = result.responsedataopinion;
-        //     temp.size = result.responsedata.size;
-        //     temp.writing = result.responsedata.writing_array;
-        //     temp.tone = result.responsedata.tone_Array;
-
-        // }
-        // if (typeof result.sector != "undefined" && result.sector != "") {
-        //     temp.sector = result.sector;
-        //     temp.opinion = result.responsedataopinion;
-        //     temp.size = result.responsedata.size;
-        //     temp.writing = result.responsedata.writing_array;
-        //     temp.tone = result.responsedata.tone_Array;
-
-        // }
-        // if (typeof result.responsedata != "undefined" && result.responsedata != "") {
-        //     temp.opinion = result.responsedataopinion;
-        //     temp.size = result.responsedata.size;
-        //     temp.writing = result.responsedata.writing_array;
-        //     temp.tone = result.responsedata.tone_Array;
-        // }
-        var linkedin_post_description = $(this).closest('.feed-shared-update-v2__comments-container').parent().parent().find('.feed-shared-update-v2__description-wrapper').text().trim();
+    var opinion = $(this).parents('#quentintou').find('.response .response_opinion span').text();
+    console.log("hello",opinion)
+    var size = $(this).parents('#quentintou').find('.response .response_size span').text();
+    var writing =$(this).parents('#quentintou').find('.response .response_writing span');
+    var writing_array = [];
+    if ($(writing).length > 0) {
+        $(writing).each(function(i)
+        {
+            if ($.inArray($(this).text(), writing_array) != -1)
+            {
+                console.log("hello")
+            
+            }
+            else{
+                writing_array.push($(this).text())
+            
+            
+            }
+        });
+    }
+    var tone = $(this).parents('#quentintou').find('.response .response_tone span');
+    var tone_Array = [];
+    if ($(tone).length > 0) {
+        $(tone).each(function(i)
+        {
+            if ($.inArray($(this).text(), tone_Array) != -1) {
+                console.log("hello")
+            }
+            else {
+                tone_Array.push($(this).text())
+            }
+        });
+    }
+    var linkedin_post_description = $(this).closest('.feed-shared-update-v2__comments-container').parent().parent().find('.feed-shared-update-v2__description-wrapper').text().trim();
     $(this).addClass('current-class-ld');
 
-        //chrome.storage.sync.set({ "responsedata": temp });
-        let post_conatainer_selector = ".x78zum5.x1n2onr6.xh8yej3";
 
-        $(post_conatainer_selector).removeClass("que-current-container");
-  
-        $(this)
-          .parent()
-          .parent()
-          .parent()
-          .parent()
-          .find(".que-processed-class")
-          .closest(post_conatainer_selector)
-          .addClass("que-current-container que-red-border");
-  
-      selector_post_description = $(".que-current-container").find(
-          'div[data-ad-comet-preview="message"][data-ad-preview="message"]'
-        );
-        
-  
-        if (selector_post_description.length > 0) {
-          facebook_post_description = selector_post_description.text();
-          //console.log(post_description);
+
+    let post_conatainer_selector = ".x78zum5.x1n2onr6.xh8yej3";
+
+      $(post_conatainer_selector).removeClass("que-current-container");
+
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .parent()
+        .find(".que-processed-class")
+        .closest(post_conatainer_selector)
+        .addClass("que-current-container que-red-border");
+
+    selector_post_description = $(".que-current-container").find(
+        'div[data-ad-comet-preview="message"][data-ad-preview="message"]'
+      );
+      
+
+      if (selector_post_description.length > 0) {
+        facebook_post_description = selector_post_description.text();
+        //console.log(post_description);
+      }
+    chrome.storage.sync.get(["language","job","sector"], function (result) {        
+        var temp = {}
+        if (typeof result.language != "undefined" && result.language != "") {
+            temp.language = result.language;
+            temp.opinion = opinion;
+            temp.size = size;
+            temp.writing = writing_array;
+            temp.tone = tone_Array;
+
+        }
+        if (typeof result.job != "undefined" && result.job != "") {
+            temp.job = result.job;
+            temp.opinion = opinion;
+            temp.size = size;
+            temp.writing = writing_array;
+            temp.tone = tone_Array;
+
+        }
+        if (typeof result.sector != "undefined" && result.sector != "") {
+            temp.sector = result.sector;
+            temp.opinion = opinion;
+            temp.size = size;
+            temp.writing = writing_array;
+            temp.tone = tone_Array;
+
+        }
+        else{
+            temp.size = size;
+            temp.opinion = opinion;
+            temp.writing = writing_array;
+            temp.tone = tone_Array;
         }
         chrome.storage.sync.set({ "responsedata": temp });
 
